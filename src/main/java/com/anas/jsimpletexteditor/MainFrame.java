@@ -80,6 +80,12 @@ public class MainFrame extends JFrame implements Serializable {
             }
             tabbedPane.getCurrentTab().save(path);
         });
+
+        fileMenuItems[2].addActionListener(event -> {
+            if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+                tabbedPane.getCurrentTab().save(fileChooser.getSelectedFile().getPath());
+            }
+        });
     }
 
     private static class CustomMenuItem extends JMenuItem {
