@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="Add the new tab button (Empty)">
+    <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="Implement save option">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/InformationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/InformationPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TabbedPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TabbedPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/files/TextFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/files/TextFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/files/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/files/FileType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/listners/TextEditorAreaListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/listners/TextEditorAreaListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/tab/TabHead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/tab/TabHead.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646149571471</updated>
       <workItem from="1646149761160" duration="19164000" />
-      <workItem from="1646226849685" duration="13883000" />
+      <workItem from="1646226849685" duration="19647000" />
     </task>
     <task id="LOCAL-00001" summary="Add some configs">
       <created>1646176042134</created>
@@ -185,7 +182,35 @@
       <option name="project" value="LOCAL" />
       <updated>1646176383569</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Improve the code">
+      <created>1646245150727</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1646245150727</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add open  file dialog">
+      <created>1646245184611</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1646245184611</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fix chars number">
+      <created>1646246750335</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1646246750335</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Implement save option">
+      <created>1646249234852</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1646249234852</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +240,11 @@
     <MESSAGE value="Add the close tab button action listener" />
     <MESSAGE value="Add the settings frame (Empty)" />
     <MESSAGE value="Add the new tab button (Empty)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add the new tab button (Empty)" />
+    <MESSAGE value="Improve the code" />
+    <MESSAGE value="Add open  file dialog" />
+    <MESSAGE value="Fix chars number" />
+    <MESSAGE value="Implement save option" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement save option" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
