@@ -39,4 +39,8 @@ public class TabHead extends JPanel {
         this.label.setText(name);
         fileChanged = false;
     }
+
+    public boolean hasChange() {
+        return this.fileChanged;
+    }
 }

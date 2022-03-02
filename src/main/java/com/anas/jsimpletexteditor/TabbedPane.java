@@ -39,4 +39,16 @@ public class TabbedPane extends JTabbedPane {
             return null;
         return (Tab) super.getSelectedComponent();
     }
+
+    @Override
+    public void remove(Component component) {
+        if (((Tab)component).hasChange()) {
+            int response = JOptionPane.showConfirmDialog(null, "The file has a changes you are shore  close before save?",
+                    "You are shore", JOptionPane.YES_NO_OPTION);
+
+            if (response == JOptionPane.YES_OPTION) {
+                super.remove(component);
+            }
+        }
+    }
 }

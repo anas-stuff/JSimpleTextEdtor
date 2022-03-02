@@ -10,8 +10,8 @@ import java.io.File;
 import java.util.Objects;
 
 public class Tab extends JPanel {
-    private TextEditorPane textEditorPane;
-    private TabHead tabHead;
+    private final TextEditorPane textEditorPane;
+    private final TabHead tabHead;
     private TextFile textFile;
 
     public Tab(TabbedPane tabbedPane) {
@@ -55,5 +55,11 @@ public class Tab extends JPanel {
     public void save(String path) {
         tabHead.setFileName(new File(path).getName());
         textEditorPane.save(path);
+    }
+
+    public boolean hasChange() {
+        if (!textFile.exists())
+            return true;
+        return tabHead.hasChange();
     }
 }

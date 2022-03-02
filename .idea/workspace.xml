@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="Add some configs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TabbedPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TabbedPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/tab/Tab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/tab/Tab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/tab/TabHead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/tab/TabHead.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646149571471</updated>
       <workItem from="1646149761160" duration="19164000" />
-      <workItem from="1646226849685" duration="20691000" />
+      <workItem from="1646226849685" duration="22891000" />
     </task>
     <task id="LOCAL-00001" summary="Add some configs">
       <created>1646176042134</created>

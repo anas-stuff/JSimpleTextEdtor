@@ -83,8 +83,16 @@ public class MainFrame extends JFrame implements Serializable {
 
         fileMenuItems[2].addActionListener(event -> {
             if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
-                tabbedPane.getCurrentTab().save(fileChooser.getSelectedFile().getPath());
+                try {
+                    int currentIndex = tabbedPane.getSelectedIndex();
+                    tabbedPane.getCurrentTab().save(fileChooser.getSelectedFile().getPath());
+                    tabbedPane.setSelectedComponent(tabbedPane.getComponentAt(currentIndex - 1));
+                } catch (NullPointerException ignored) {}
             }
+        });
+
+        fileMenuItems[3].addActionListener(event -> {
+            tabbedPane.remove(tabbedPane.getCurrentTab());
         });
     }
 
