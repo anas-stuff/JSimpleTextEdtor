@@ -1,5 +1,6 @@
 package com.anas.jsimpletexteditor;
 
+import com.anas.jsimpletexteditor.buttons.newtab.NewTabButton;
 import com.anas.jsimpletexteditor.tab.Tab;
 
 import javax.swing.*;
@@ -10,16 +11,25 @@ import java.io.Serial;
 public class TabbedPane extends JTabbedPane {
     @Serial
     private static final long serialVersionUID = 1L;
+    transient private Font uiFont;
 
     public TabbedPane(Font uiFont) {
         super();
+        this.uiFont = uiFont;
         this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+        this.addNewTabButton();
     }
 
     public void openNewTab(File file) {
         Tab tab = new Tab(this, file);
-        super.addTab(tab.getName(), tab);
+        super.insertTab(tab.getName(), null, tab, "", super.getTabCount() - 1); // 1 for the new tab
         super.setSelectedComponent(tab);
         super.setTabComponentAt(super.indexOfComponent(tab), tab.getTabHead());
+    }
+
+    private void addNewTabButton() {
+        NewTabButton newTabButton = new NewTabButton(uiFont, this);
+        super.addTab("", newTabButton);
+        super.setTabComponentAt(super.getTabCount() - 1, newTabButton.getNewTabHead());
     }
 }

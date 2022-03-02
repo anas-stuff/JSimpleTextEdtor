@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="Add the new tab button (Empty)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TabbedPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TabbedPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/buttons/newtab/NewTabButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/buttons/newtab/NewTabButton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +31,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="4" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
@@ -72,6 +75,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.anas.jsimpletexteditor.buttons.newtab" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.anas.jsimpletexteditor.Main" />
@@ -100,12 +108,110 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646149571471</updated>
-      <workItem from="1646149761160" duration="15523000" />
+      <workItem from="1646149761160" duration="19164000" />
+      <workItem from="1646226849685" duration="362000" />
     </task>
+    <task id="LOCAL-00001" summary="Add some configs">
+      <created>1646176042134</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646176042134</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add mig layout dependency">
+      <created>1646176092449</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646176092449</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add text editor pane">
+      <created>1646176131701</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1646176131701</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add tabbed pane">
+      <created>1646176155979</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646176155979</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add the tab head">
+      <created>1646176178314</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1646176178314</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add the tab">
+      <created>1646176205349</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1646176205349</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add the main class">
+      <created>1646176256126</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1646176256126</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add the main frame">
+      <created>1646176275817</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1646176275817</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add the settings frame (Empty)">
+      <created>1646176357723</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1646176357723</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add the new tab button (Empty)">
+      <created>1646176383569</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1646176383569</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add some configs" />
+    <MESSAGE value="Add mig layout dependency" />
+    <MESSAGE value="Add text editor pane" />
+    <MESSAGE value="Add tabbed pane" />
+    <MESSAGE value="Add the tab head" />
+    <MESSAGE value="Add the tab" />
+    <MESSAGE value="Add the main class" />
+    <MESSAGE value="Add the main frame" />
+    <MESSAGE value="Add the close tab button" />
+    <MESSAGE value="Add the close tab button action listener" />
+    <MESSAGE value="Add the settings frame (Empty)" />
+    <MESSAGE value="Add the new tab button (Empty)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add the new tab button (Empty)" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
