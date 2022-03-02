@@ -13,7 +13,7 @@ import javax.swing.event.ChangeListener;
 public class InformationPanel extends JPanel implements ChangeListener {
     private JComboBox<Type> typeComboBox;
     private JLabel charsNumberLabel;
-    private TabbedPane tabbedPane;
+    private final TabbedPane tabbedPane;
     private final TextEditorAreaListener textEditorAreaListener;
 
     public InformationPanel(TabbedPane tabbedPane) {
@@ -36,14 +36,14 @@ public class InformationPanel extends JPanel implements ChangeListener {
         Tab tab = tabbedPane.getCurrentTab();
         textEditorAreaListener.setInformationPanel(this);
         if (tab != null) {
-            setValus(tab);
+            setValues(tab);
         } else {
             typeComboBox.removeAllItems();
         }
         tabbedPane.addChangeListener(this);
     }
 
-    private void setValus(Tab tab) {
+    private void setValues(Tab tab) {
         addItemsToTypeComboBox();
         TextFile textFile = tab.getTextEditorPane().getTextFile();
         typeComboBox.setSelectedIndex(textFile.getType().ordinal());
@@ -60,7 +60,7 @@ public class InformationPanel extends JPanel implements ChangeListener {
     public void stateChanged(ChangeEvent changeEvent) {
         Tab tab = tabbedPane.getCurrentTab();
         if (tab != null) {
-            setValus(tab);
+            setValues(tab);
             textEditorAreaListener.setAcceptTab(tab);
             tab.getTextEditorPane().getTextArea().addKeyListener(textEditorAreaListener);
         } else {
@@ -71,6 +71,6 @@ public class InformationPanel extends JPanel implements ChangeListener {
     }
 
     public void updateCharsNumber() {
-        charsNumberLabel.setText("Chars: " + tabbedPane.getCurrentTab().getTextEditorPane().getTextArea().getText().length() + 1);;
+        charsNumberLabel.setText("Chars: " + tabbedPane.getCurrentTab().getTextEditorPane().getTextArea().getText().length() + 1);
     }
 }
