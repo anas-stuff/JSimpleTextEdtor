@@ -11,6 +11,7 @@ public class MainFrame extends JFrame implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     private TabbedPane tabbedPane;
+    private InformationPanel informationPanel;
     private JMenuBar menuBar;
     private Font uiFont;
     private Color backgroundColor, fontColor;
@@ -75,10 +76,12 @@ public class MainFrame extends JFrame implements Serializable {
     }
 
     private void addComponents() {
-        super.add(tabbedPane, "grow, push");
+        super.add(tabbedPane, "grow, push, wrap");
+        super.add(informationPanel, "grow");
     }
 
     private void init() {
         tabbedPane = new TabbedPane(uiFont);
+        informationPanel = new InformationPanel(tabbedPane);
     }
 }

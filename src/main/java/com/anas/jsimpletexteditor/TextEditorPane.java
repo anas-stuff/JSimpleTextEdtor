@@ -1,8 +1,9 @@
 package com.anas.jsimpletexteditor;
 
+import com.anas.jsimpletexteditor.files.TextFile;
+
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.io.Serial;
 import java.io.Serializable;
 
@@ -11,11 +12,11 @@ public class TextEditorPane extends JScrollPane implements Serializable {
     private static final long serialVersionUID = 1L;
     private JTextArea textArea;
     private Font font;
-    private File file;
+    private TextFile textFile;
 
-    public TextEditorPane(File file) {
+    public TextEditorPane(TextFile textFile) {
         super();
-        this.file = file;
+        this.textFile = textFile;
         init(); // Initialize components
         setup(); // Setup components
         addComponents(); // Add components to the container
@@ -36,7 +37,15 @@ public class TextEditorPane extends JScrollPane implements Serializable {
         font = new Font("Akaya Kanadaka", Font.PLAIN, 20);
     }
 
-    public void setFile(File file) {
-        this.file = file;
+    public void setTextFile(TextFile textFile) {
+        this.textFile = textFile;
+    }
+
+    public TextFile getTextFile() {
+        return textFile;
+    }
+
+    public JTextArea getTextArea() {
+        return textArea;
     }
 }
