@@ -17,8 +17,10 @@ public class TextEditorAreaListener implements KeyListener {
     @Override
     public void keyTyped(KeyEvent keyEvent) {
         if (informationPanel != null) {
-            if (acceptTab != null && acceptTab.getTextEditorPane().getTextArea().equals(keyEvent.getSource()))
-                 informationPanel.updateCharsNumber();
+            if (acceptTab != null && acceptTab.getTextEditorPane().getTextArea().equals(keyEvent.getSource())) {
+                informationPanel.updateCharsNumber();
+                acceptTab.getTabHead().contentChanged(); // Add *
+            }
         }
     }
 

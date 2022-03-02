@@ -4,15 +4,16 @@ import com.anas.jsimpletexteditor.TabbedPane;
 import com.anas.jsimpletexteditor.buttons.closetab.CloseTabButton;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class TabHead extends JPanel {
     private final JLabel label;
     private final CloseTabButton closeButton;
+    private boolean fileChanged;
 
     public TabHead(final TabbedPane tabbedPane, final Tab tab) {
         super();
+        fileChanged = false;
         this.label = new JLabel(tab.getTitle());
         this.closeButton = new CloseTabButton(tabbedPane, tab);
         super.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
@@ -28,10 +29,14 @@ public class TabHead extends JPanel {
     }
 
     public void contentChanged() {
-        label.setText(label.getText() + "*");
+        if (!fileChanged) {
+            label.setText(label.getText() + "*");
+            fileChanged = true;
+        }
     }
 
     public void setFileName(String name) {
         this.label.setText(name);
+        fileChanged = false;
     }
 }
