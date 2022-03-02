@@ -21,8 +21,8 @@ public class TabbedPane extends JTabbedPane {
         this.addNewTabButton();
     }
 
-    public void openNewTab(File file) {
-        Tab tab = new Tab(this, (TextFile) file);
+    public void openNewTab(TextFile textFile) {
+        Tab tab = new Tab(this, textFile);
         super.insertTab(tab.getName(), null, tab, "", super.getTabCount() - 1); // 1 for the new tab
         super.setSelectedComponent(tab);
         super.setTabComponentAt(super.indexOfComponent(tab), tab.getTabHead());

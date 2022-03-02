@@ -1,7 +1,7 @@
 package com.anas.jsimpletexteditor;
 
 import com.anas.jsimpletexteditor.files.TextFile;
-import com.anas.jsimpletexteditor.files.Type;
+import com.anas.jsimpletexteditor.files.FileType;
 import com.anas.jsimpletexteditor.listners.TextEditorAreaListener;
 import com.anas.jsimpletexteditor.tab.Tab;
 import net.miginfocom.swing.MigLayout;
@@ -11,7 +11,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class InformationPanel extends JPanel implements ChangeListener {
-    private JComboBox<Type> typeComboBox;
+    private JComboBox<FileType> typeComboBox;
     private JLabel charsNumberLabel;
     private final TabbedPane tabbedPane;
     private final TextEditorAreaListener textEditorAreaListener;
@@ -51,8 +51,8 @@ public class InformationPanel extends JPanel implements ChangeListener {
     }
 
     private void addItemsToTypeComboBox() {
-        for (Type type : Type.values()) {
-            typeComboBox.addItem(type);
+        for (FileType fileType : FileType.values()) {
+            typeComboBox.addItem(fileType);
         }
     }
 
