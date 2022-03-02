@@ -1,5 +1,7 @@
 package com.anas.jsimpletexteditor;
 
+import com.anas.jsimpletexteditor.files.FileType;
+import com.anas.jsimpletexteditor.files.TextFile;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
@@ -20,7 +22,6 @@ public class MainFrame extends JFrame implements Serializable {
         init();
         addMenuBar();
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // super.setPreferredSize(sizeDimension);
         super.setLayout(new MigLayout());
         this.addComponents(); // add components to the frame
         super.setLocationRelativeTo(null);
@@ -48,6 +49,8 @@ public class MainFrame extends JFrame implements Serializable {
             }
         }
 
+        addActions(fileMenuItems);
+
         addFileMenuNewFileTypeItems(newFileMenu);
 
         fileMenu.setFont(uiFont);
@@ -58,18 +61,36 @@ public class MainFrame extends JFrame implements Serializable {
 
     }
 
+    private void addActions(JMenuItem[] fileMenuItems) {
+        fileMenuItems[0].addActionListener(event -> {
+            JFileChooser fileChooser = new JFileChooser();
+
+            if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+                tabbedPane.openNewTab(new TextFile(fileChooser.getSelectedFile().getPath()));
+            }
+        });
+    }
+
+    private static class CustomMenuItem extends JMenuItem {
+        FileType fileType;
+        CustomMenuItem(FileType fileType) {
+            super(fileType.toString());
+            this.fileType = fileType;
+        }
+    }
+
     private void addFileMenuNewFileTypeItems(JMenu newFileMenu) {
-        JMenuItem[] newFileMenuItems = {
-                        new JMenuItem("Plain file"),
-                        new JMenuItem("Text File"), new JMenuItem("HTML File"),
-                        new JMenuItem("Java File"), new JMenuItem("Python File"),
-                        new JMenuItem("C File"), new JMenuItem("C++ File"),
-                        new JMenuItem("JavaScript File"), new JMenuItem("CSS File")
-        };
-        for (JMenuItem item : newFileMenuItems) {
+        CustomMenuItem[] newFileMenuItems = new CustomMenuItem[FileType.values().length];
+        // Fill
+        for (FileType fileType : FileType.values()) {
+            newFileMenuItems[fileType.ordinal()] = new CustomMenuItem(fileType);
+        }
+        for (CustomMenuItem item : newFileMenuItems) {
             newFileMenu.add(item);
             item.addActionListener(event -> {
-                tabbedPane.openNewTab(null);
+                TextFile textFile = new TextFile("Untitled." + item.fileType.getExtension());
+                textFile.setType(item.fileType);
+                tabbedPane.openNewTab(textFile);
             });
             item.setFont(uiFont);
         }
