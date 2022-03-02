@@ -30,4 +30,8 @@ public class TabHead extends JPanel {
     public void contentChanged() {
         label.setText(label.getText() + "*");
     }
+
+    public void setFileName(String name) {
+        this.label.setText(name);
+    }
 }

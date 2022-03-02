@@ -62,12 +62,23 @@ public class MainFrame extends JFrame implements Serializable {
     }
 
     private void addActions(JMenuItem[] fileMenuItems) {
+        JFileChooser fileChooser = new JFileChooser();
         fileMenuItems[0].addActionListener(event -> {
-            JFileChooser fileChooser = new JFileChooser();
-
             if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
                 tabbedPane.openNewTab(new TextFile(fileChooser.getSelectedFile().getPath()));
             }
+        });
+
+        fileMenuItems[1].addActionListener(event -> {
+            String path = null;
+            if (!tabbedPane.getCurrentTab().getTextEditorPane().getTextFile().exists()) {
+                if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+                    path = fileChooser.getSelectedFile().getPath();
+                }
+            } else {
+                path = tabbedPane.getCurrentTab().getTextEditorPane().getTextFile().getPath();
+            }
+            tabbedPane.getCurrentTab().save(path);
         });
     }
 

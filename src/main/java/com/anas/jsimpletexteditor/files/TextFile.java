@@ -1,38 +1,13 @@
 package com.anas.jsimpletexteditor.files;
 
 
-import java.io.File;
+import java.io.*;
 
 public class TextFile extends File {
     private FileType fileType;
     public TextFile(String pathname) {
         super(pathname);
-        fileType = initType();
-    }
-
-    private FileType initType() {
-        String name = getName();
-        if (!name.contains(".") || name.endsWith(".txt")) {
-            return FileType.PLAIN_TEXT;
-        }
-
-        String extension = name.substring(name.lastIndexOf(".") + 1);
-        return switch (extension) {
-            case "java" -> FileType.JAVA;
-            case "c" ->  FileType.C;
-            case "cpp" -> FileType.CPP;
-            case "py" -> FileType.PYTHON;
-            case "js" -> FileType.JAVASCRIPT;
-            case "html" -> FileType.HTML;
-            case "css" -> FileType.CSS;
-            case "xml" -> FileType.XML;
-            case "json" -> FileType.JSON;
-            case "sql" -> FileType.SQL;
-            case "php" -> FileType.PHP;
-            case "rb" -> FileType.RUBY;
-            case "md" -> FileType.MARKDOWN;
-            default -> FileType.PLAIN_TEXT;
-        };
+        fileType = FileType.getFileType(new File(pathname));
     }
 
     public FileType getType() {
@@ -44,6 +19,39 @@ public class TextFile extends File {
     }
 
     public String getText() {
+        if (super.exists()) {
+            if (super.canRead()) {
+                return readFile();
+            }
+        }
         return "";
+    }
+
+    private String readFile() {
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(this));
+
+            String line = null;
+            while ((line = bufferedReader.readLine()) != null) {
+                stringBuilder.append(line).append('\n');
+            }
+            stringBuilder.deleteCharAt(stringBuilder.lastIndexOf("\n")); // Delete last new line
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return  stringBuilder.toString();
+    }
+
+    public boolean save(String path, String newContent) {
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path));
+            bufferedWriter.write(newContent);
+            bufferedWriter.close();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

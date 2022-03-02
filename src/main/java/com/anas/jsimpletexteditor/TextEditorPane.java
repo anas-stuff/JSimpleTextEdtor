@@ -20,6 +20,7 @@ public class TextEditorPane extends JScrollPane implements Serializable {
         init(); // Initialize components
         setup(); // Setup components
         addComponents(); // Add components to the container
+        refresh();
     }
 
     private void addComponents() {
@@ -34,7 +35,7 @@ public class TextEditorPane extends JScrollPane implements Serializable {
 
     private void init() {
         textArea = new JTextArea();
-        font = new Font("Akaya Kanadaka", Font.PLAIN, 20);
+        font = new Font("", Font.PLAIN, 20);
     }
 
     public void setTextFile(TextFile textFile) {
@@ -47,5 +48,14 @@ public class TextEditorPane extends JScrollPane implements Serializable {
 
     public JTextArea getTextArea() {
         return textArea;
+    }
+
+    public void refresh() {
+        textArea.setText(textFile.getText());
+    }
+
+    public boolean save(String path) {
+
+        return  textFile.save(path, textArea.getText());
     }
 }

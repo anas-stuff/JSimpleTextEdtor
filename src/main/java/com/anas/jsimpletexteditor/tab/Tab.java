@@ -6,6 +6,7 @@ import com.anas.jsimpletexteditor.files.TextFile;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
+import java.io.File;
 import java.util.Objects;
 
 public class Tab extends JPanel {
@@ -49,5 +50,10 @@ public class Tab extends JPanel {
 
     public TextEditorPane getTextEditorPane() {
         return textEditorPane;
+    }
+
+    public void save(String path) {
+        tabHead.setFileName(new File(path).getName());
+        textEditorPane.save(path);
     }
 }
