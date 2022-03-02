@@ -71,6 +71,6 @@ public class InformationPanel extends JPanel implements ChangeListener {
     }
 
     public void updateCharsNumber() {
-        charsNumberLabel.setText("Chars: " + tabbedPane.getCurrentTab().getTextEditorPane().getTextArea().getText().length() + 1);
+        charsNumberLabel.setText("Chars: " + (tabbedPane.getCurrentTab().getTextEditorPane().getTextArea().getText().length() + 1));
     }
 }
