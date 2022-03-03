@@ -31,6 +31,21 @@ public class TextEditorPane extends JScrollPane implements Serializable {
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
         textArea.setFont(font);
+        setUpThePopupMenu();
+    }
+
+    private void setUpThePopupMenu() {
+        JPopupMenu popupMenu = new JPopupMenu();
+
+        popupMenu.add(new JMenuItem("Cut")).addActionListener(e -> textArea.cut());
+        popupMenu.add(new JMenuItem("Copy")).addActionListener(e -> textArea.copy());
+        popupMenu.add(new JMenuItem("Paste")).addActionListener(e -> textArea.paste());
+        popupMenu.addSeparator();
+        popupMenu.add(new JMenuItem("Select All")).addActionListener(e -> textArea.selectAll());
+        popupMenu.addSeparator();
+        popupMenu.add(new JMenuItem("Find")); // TODO: Implement find
+
+        textArea.setComponentPopupMenu(popupMenu);
     }
 
     private void init() {
