@@ -23,6 +23,7 @@ public class MainFrame extends JFrame implements Serializable {
         addMenuBar();
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         super.setLayout(new MigLayout());
+        super.setSize(new Dimension(800, 600));
         this.addComponents(); // add components to the frame
         super.setLocationRelativeTo(null);
         super.setVisible(true);
