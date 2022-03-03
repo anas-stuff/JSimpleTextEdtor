@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="Implement the close option">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="Fix ignore file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +80,7 @@
       <recent name="com.anas.jsimpletexteditor.buttons.newtab" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SettingsFrame">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.anas.jsimpletexteditor.Main" />
       <module name="JSimpleTextEdtor" />
@@ -93,8 +94,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SettingsFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.anas.jsimpletexteditor.settings.SettingsFrame" />
+      <module name="JSimpleTextEdtor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.anas.jsimpletexteditor.settings.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SettingsFrame" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -108,7 +123,9 @@
       <option name="presentableId" value="Default" />
       <updated>1646149571471</updated>
       <workItem from="1646149761160" duration="19164000" />
-      <workItem from="1646226849685" duration="23984000" />
+      <workItem from="1646226849685" duration="24701000" />
+      <workItem from="1646309584573" duration="12000" />
+      <workItem from="1646309605118" duration="5578000" />
     </task>
     <task id="LOCAL-00001" summary="Add some configs">
       <created>1646176042134</created>
@@ -222,7 +239,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646261368182</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add work space to git ignore file">
+      <created>1646262220685</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1646262220685</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fix ignore file">
+      <created>1646262279054</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1646262279054</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +288,9 @@
     <MESSAGE value="Implement save option" />
     <MESSAGE value="Add some configs" />
     <MESSAGE value="Implement the close option" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement the close option" />
+    <MESSAGE value="Add work space to git ignore file" />
+    <MESSAGE value="Fix ignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix ignore file" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
