@@ -43,7 +43,8 @@ public class TextEditorPane extends JScrollPane implements Serializable {
         popupMenu.addSeparator();
         popupMenu.add(new JMenuItem("Select All")).addActionListener(e -> textArea.selectAll());
         popupMenu.addSeparator();
-        popupMenu.add(new JMenuItem("Find")).addActionListener(e -> JOptionPane.showMessageDialog(null, "Sooooon :)")); // TODO: Implement find
+        popupMenu.add(new JMenuItem("Find"))
+                .addActionListener(e -> JOptionPane.showMessageDialog(null, "Sooooon :)")); // TODO: Implement find
 
         textArea.setComponentPopupMenu(popupMenu);
     }
@@ -70,7 +71,6 @@ public class TextEditorPane extends JScrollPane implements Serializable {
     }
 
     public boolean save(String path) {
-
-        return  textFile.save(path, textArea.getText());
+        return textFile.save(path, textArea.getText());
     }
 }
