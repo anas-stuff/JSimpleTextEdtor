@@ -5,15 +5,19 @@ import java.util.ArrayList;
 
 public class SettingsManager {
     private static SettingsManager instance;
-    private Settings settings;
-    private final String settingsFilePath;
+    private Settings uiSettings, editorSettings;
     private final ArrayList<SettingsListener> listeners;
 
     private SettingsManager() {
-        settings = new Settings();
-        settingsFilePath = System.getProperty("user.home") + File.separator + ".jsimpletexteditor" + File.separator + "settings.ser";
+        uiSettings = new UISettings();
+        editorSettings = new EditorSettings();
         listeners = new ArrayList<>();
-        loadSettings();
+        loadAllSettings();
+    }
+
+    private void loadAllSettings() {
+        uiSettings = loadSettings(uiSettings);
+        editorSettings = loadSettings(editorSettings);
     }
 
     public static SettingsManager getInstance() {
@@ -23,39 +27,42 @@ public class SettingsManager {
         return instance;
     }
 
-    public Settings getSettings() {
-        return settings;
-    }
-
-    public void loadSettings() {
-        File settingsFile = new File(settingsFilePath);
+    public Settings loadSettings(Settings settings) {
+        File settingsFile = new File(settings.getSettingsFilePath());
+        Settings loadedSettings = null;
         if (!settingsFile.exists()) {
             makeSettingsFile();
         }
         try {
-            FileInputStream fileInputStream = new FileInputStream(settingsFilePath);
+            FileInputStream fileInputStream = new FileInputStream(settings.getSettingsFilePath());
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            settings = (Settings) objectInputStream.readObject();
+            loadedSettings = (Settings) objectInputStream.readObject();
             objectInputStream.close();
             fileInputStream.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-
+        if (loadedSettings == null)
+            return settings;
+        return loadedSettings;
     }
 
     private void makeSettingsFile() {
-        File settingsFile = new File(settingsFilePath);
+        File settingsFile = new File(uiSettings.getSettingsFilePath());
         if (!settingsFile.getParentFile().exists()) {
             settingsFile.getParentFile().mkdirs();
         }
-        saveSettings();
+        saveAll();
     }
 
-    private void saveSettings() {
-        settings = new Settings(); // Default settings
+    private void saveAll() {
+        save(uiSettings);
+        save(editorSettings);
+    }
+
+    private void save(Settings settings) {
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream(settingsFilePath);
+            FileOutputStream fileOutputStream = new FileOutputStream(settings.getSettingsFilePath());
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(settings);
             objectOutputStream.close();
@@ -66,7 +73,7 @@ public class SettingsManager {
     }
 
     public void applySettings() {
-        this.saveSettings();
+        this.saveAll();
         this.notifySettingsListeners();
     }
 
@@ -82,12 +89,29 @@ public class SettingsManager {
 
     private void notifySettingsListeners() {
         for (SettingsListener listener : listeners) {
-            listener.onSettingsChanged(settings);
+            listener.onSettingsChanged(uiSettings, editorSettings);
         }
     }
 
-    public void applySettings(Settings settings) {
-        this.settings = settings;
+    public void applySettings(Settings ... settings) {
+        if (settings.length == 0)
+            return;
+
+        for (Settings setting : settings) {
+            if (setting instanceof UISettings) {
+                this.uiSettings = (UISettings) setting;
+            } else if (setting instanceof EditorSettings) {
+                this.editorSettings = (EditorSettings) setting;
+            }
+        }
         this.applySettings();
+    }
+
+    public Settings getUiSettings() {
+        return uiSettings;
+    }
+
+    public Settings getEditorSettings() {
+        return editorSettings;
     }
 }

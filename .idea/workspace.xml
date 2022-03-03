@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="Fix ignore file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/Settings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/categories/AbstractSettingsCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/categories/AbstractSettingsCategory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +80,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.anas.jsimpletexteditor.settings" />
       <recent name="com.anas.jsimpletexteditor.files" />
       <recent name="com.anas.jsimpletexteditor.buttons.newtab" />
     </key>
@@ -125,7 +130,7 @@
       <workItem from="1646149761160" duration="19164000" />
       <workItem from="1646226849685" duration="24701000" />
       <workItem from="1646309584573" duration="12000" />
-      <workItem from="1646309605118" duration="5578000" />
+      <workItem from="1646309605118" duration="22701000" />
     </task>
     <task id="LOCAL-00001" summary="Add some configs">
       <created>1646176042134</created>

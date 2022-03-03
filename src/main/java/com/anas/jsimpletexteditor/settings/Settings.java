@@ -1,74 +1,75 @@
 package com.anas.jsimpletexteditor.settings;
 
 import java.awt.*;
+import java.io.File;
 import java.io.Serial;
 import java.io.Serializable;
 
-public class Settings implements Serializable {
+public abstract class Settings implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private Font uiFont;
-    private Color uiBackgroundColor, uiTextColor;
-
-    private Font editorFont;
-    private Color editorBackgroundColor, editorTextColor;
+    private Font font;
+    private Color backgroundColor, textColor;
 
     public Settings() {
-        uiFont = new Font("Arial", Font.PLAIN, 12);
-        uiBackgroundColor = Color.WHITE;
-        uiTextColor = Color.BLACK;
-
-        editorFont = new Font("Arial", Font.PLAIN, 12);
-        editorBackgroundColor = Color.WHITE;
-        editorTextColor = Color.BLACK;
+        font = new Font("Arial", Font.PLAIN, 12);
+        backgroundColor = Color.WHITE;
+        textColor = Color.BLACK;
     }
 
-    public Font getUiFont() {
-        return uiFont;
+    public Settings(Settings settings) {
+        setFont(settings.getFont());
+        setBackgroundColor(settings.getBackgroundColor());
+        setTextColor(settings.getTextColor());
     }
 
-    public void setUiFont(Font uiFont) {
-        this.uiFont = uiFont;
+    public Font getFont() {
+        return font;
     }
 
-    public Color getUiBackgroundColor() {
-        return uiBackgroundColor;
+    public void setFont(Font font) {
+        this.font = font;
     }
 
-    public void setUiBackgroundColor(Color uiBackgroundColor) {
-        this.uiBackgroundColor = uiBackgroundColor;
+    public Color getBackgroundColor() {
+        return backgroundColor;
     }
 
-    public Color getUiTextColor() {
-        return uiTextColor;
+    public void setBackgroundColor(Color backgroundColor) {
+        this.backgroundColor = backgroundColor;
     }
 
-    public void setUiTextColor(Color uiTextColor) {
-        this.uiTextColor = uiTextColor;
+    public Color getTextColor() {
+        return textColor;
     }
 
-    public Font getEditorFont() {
-        return editorFont;
+    public void setTextColor(Color textColor) {
+        this.textColor = textColor;
     }
 
-    public void setEditorFont(Font editorFont) {
-        this.editorFont = editorFont;
+    public void setFontFamily(String fontFamily) {
+        this.setFont(new Font(fontFamily, font.getStyle(), font.getSize()));
     }
 
-    public Color getEditorBackgroundColor() {
-        return editorBackgroundColor;
+    public void setFontSize(int fontSize) {
+        this.setFont(new Font(font.getFamily(), font.getStyle(), fontSize));
     }
 
-    public void setEditorBackgroundColor(Color editorBackgroundColor) {
-        this.editorBackgroundColor = editorBackgroundColor;
+    public void setFontStyle(int fontStyle) {
+        int style = switch (fontStyle) {
+            case 1 -> Font.BOLD;
+            case 2 -> Font.ITALIC;
+            case 3 -> Font.BOLD + Font.ITALIC;
+            default -> Font.PLAIN;
+        };
+        this.setFont(new Font(font.getFamily(), fontStyle, font.getSize()));
     }
 
-    public Color getEditorTextColor() {
-        return editorTextColor;
+    public abstract String getSettingsFilePath();
+
+    public String getBasePath() {
+        return System.getProperty("user.dir") + File.separator + ".jsimpletexteditor";
     }
 
-    public void setEditorTextColor(Color editorTextColor) {
-        this.editorTextColor = editorTextColor;
-    }
 }
