@@ -11,6 +11,9 @@
 <img alt="with new file" src="./Screenshots/2.png">
 <img alt="with new file and text" src="./Screenshots/3.png">
 <img alt="with open file" src="./Screenshots/4.png">
+<img alt="with open file and settings font" src="./Screenshots/5.png">
+<img alt="with open file and settings color" src="./Screenshots/6.png">
+
 
 #### License: MIT
 #### Version: 1.0.0
