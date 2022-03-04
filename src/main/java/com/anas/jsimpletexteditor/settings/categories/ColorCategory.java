@@ -5,9 +5,21 @@ import javax.swing.*;
 public class ColorCategory extends AbstractSettingsCategory {
     private JColorChooser uiFontColorChooser, uiBackgroundColorChooser;
     private JColorChooser editorFontColorChooser, editorBackgroundColorChooser;
+    private static AbstractSettingsCategory instance;
 
-    public ColorCategory() {
+    private ColorCategory() {
         super("Color");
+    }
+
+    public static AbstractSettingsCategory getInstance() {
+        if (instance == null) {
+            instance = new ColorCategory();
+        }
+        return instance;
+    }
+
+    public static void removeInstance() {
+        instance = null;
     }
 
     @Override

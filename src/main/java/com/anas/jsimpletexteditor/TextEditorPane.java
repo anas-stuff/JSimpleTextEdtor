@@ -1,17 +1,20 @@
 package com.anas.jsimpletexteditor;
 
 import com.anas.jsimpletexteditor.files.TextFile;
+import com.anas.jsimpletexteditor.settings.EditorSettings;
+import com.anas.jsimpletexteditor.settings.SettingsChangedEvent;
+import com.anas.jsimpletexteditor.settings.SettingsListener;
+import com.anas.jsimpletexteditor.settings.SettingsManager;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.Serial;
 import java.io.Serializable;
 
-public class TextEditorPane extends JScrollPane implements Serializable {
+public class TextEditorPane extends JScrollPane implements Serializable, SettingsListener {
     @Serial
     private static final long serialVersionUID = 1L;
     private JTextArea textArea;
-    private Font font;
     private TextFile textFile;
 
     public TextEditorPane(TextFile textFile) {
@@ -30,8 +33,8 @@ public class TextEditorPane extends JScrollPane implements Serializable {
     private void setup() {
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
-        textArea.setFont(font);
         setUpThePopupMenu();
+        this.setUpUI((EditorSettings) SettingsManager.getInstance().getEditorSettings());
     }
 
     private void setUpThePopupMenu() {
@@ -51,7 +54,6 @@ public class TextEditorPane extends JScrollPane implements Serializable {
 
     private void init() {
         textArea = new JTextArea();
-        font = new Font("", Font.PLAIN, 20);
     }
 
     public void setTextFile(TextFile textFile) {
@@ -72,5 +74,19 @@ public class TextEditorPane extends JScrollPane implements Serializable {
 
     public boolean save(String path) {
         return textFile.save(path, textArea.getText());
+    }
+
+    @Override
+    public void onSettingsChanged(SettingsChangedEvent event) {
+        setUpUI(event.getEditorSettings());
+        textArea.revalidate();
+        textArea.repaint();
+    }
+
+    private void setUpUI(EditorSettings settings) {
+        textArea.setFont(settings.getFont());
+        textArea.setForeground(settings.getTextColor());
+        textArea.setBackground(settings.getBackgroundColor());
+        textArea.setCaretColor(settings.getTextColor());
     }
 }

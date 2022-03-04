@@ -9,9 +9,20 @@ public class FontCategory extends AbstractSettingsCategory {
     private JComboBox<String> uiFamilyComboBox, editorFamilyComboBox;
     private JSpinner uiSizeSpinner, editorSizeSpinner;
     private JComboBox<String> uiStyleComboBox, editorStyleComboBox;
+    private static AbstractSettingsCategory instance;
 
-    public FontCategory() {
+    private FontCategory() {
         super("Font");
+    }
+    public static AbstractSettingsCategory getInstance() {
+        if (instance == null) {
+            instance = new FontCategory();
+        }
+        return instance;
+    }
+
+    public static void removeInstance() {
+        instance = null;
     }
 
     @Override

@@ -89,12 +89,12 @@ public class SettingsManager {
 
     private void notifySettingsListeners() {
         for (SettingsListener listener : listeners) {
-            listener.onSettingsChanged(uiSettings, editorSettings);
+            listener.onSettingsChanged(new SettingsChangedEvent((UISettings) uiSettings, (EditorSettings) editorSettings));
         }
     }
 
     public void applySettings(Settings ... settings) {
-        if (settings.length == 0)
+        if (settings == null || settings.length == 0)
             return;
 
         for (Settings setting : settings) {

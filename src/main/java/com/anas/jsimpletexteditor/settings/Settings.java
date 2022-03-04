@@ -13,7 +13,7 @@ public abstract class Settings implements Serializable {
     private Color backgroundColor, textColor;
 
     public Settings() {
-        font = new Font("Arial", Font.PLAIN, 12);
+        font = new Font(Font.SERIF, Font.PLAIN, 12);
         backgroundColor = Color.WHITE;
         textColor = Color.BLACK;
     }

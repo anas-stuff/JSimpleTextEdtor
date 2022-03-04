@@ -2,21 +2,19 @@ package com.anas.jsimpletexteditor;
 
 import com.anas.jsimpletexteditor.buttons.newtab.NewTabButton;
 import com.anas.jsimpletexteditor.files.TextFile;
+import com.anas.jsimpletexteditor.settings.SettingsManager;
 import com.anas.jsimpletexteditor.tab.Tab;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.io.Serial;
 
 public class TabbedPane extends JTabbedPane {
     @Serial
     private static final long serialVersionUID = 1L;
-    transient private Font uiFont;
 
-    public TabbedPane(Font uiFont) {
+    public TabbedPane() {
         super();
-        this.uiFont = uiFont;
         this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
         this.addNewTabButton();
     }
@@ -29,7 +27,7 @@ public class TabbedPane extends JTabbedPane {
     }
 
     private void addNewTabButton() {
-        NewTabButton newTabButton = new NewTabButton(uiFont, this);
+        NewTabButton newTabButton = new NewTabButton(SettingsManager.getInstance().getUiSettings().getFont(), this);
         super.addTab("", newTabButton);
         super.setTabComponentAt(super.getTabCount() - 1, newTabButton.getNewTabHead());
     }

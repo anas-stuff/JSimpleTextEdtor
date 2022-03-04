@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="Fix ignore file">
+    <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="Add the color settings pane">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/InformationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/InformationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TabbedPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TabbedPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TextEditorPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TextEditorPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/Settings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/categories/AbstractSettingsCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/categories/AbstractSettingsCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/categories/ColorCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/categories/ColorCategory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/categories/FontCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/categories/FontCategory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +82,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -83,7 +91,7 @@
       <recent name="com.anas.jsimpletexteditor.buttons.newtab" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SettingsFrame">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.anas.jsimpletexteditor.Main" />
       <module name="JSimpleTextEdtor" />
@@ -112,8 +120,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SettingsFrame" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.SettingsFrame" />
       </list>
     </recent_temporary>
   </component>
@@ -128,7 +136,10 @@
       <workItem from="1646149761160" duration="19164000" />
       <workItem from="1646226849685" duration="24701000" />
       <workItem from="1646309584573" duration="12000" />
-      <workItem from="1646309605118" duration="25245000" />
+      <workItem from="1646309605118" duration="25641000" />
+      <workItem from="1646399186230" duration="193000" />
+      <workItem from="1646399399134" duration="292000" />
+      <workItem from="1646399710736" duration="6807000" />
     </task>
     <task id="LOCAL-00001" summary="Add some configs">
       <created>1646176042134</created>
@@ -256,7 +267,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646262279054</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Improve the code ↖️↖️">
+      <created>1646352224697</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1646352224697</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add the color settings pane">
+      <created>1646352267344</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1646352267344</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +318,9 @@
     <MESSAGE value="Implement the close option" />
     <MESSAGE value="Add work space to git ignore file" />
     <MESSAGE value="Fix ignore file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix ignore file" />
+    <MESSAGE value="Improve the code ↖️↖️" />
+    <MESSAGE value="Add the color settings pane" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add the color settings pane" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

@@ -1,5 +1,6 @@
 package com.anas.jsimpletexteditor.settings;
 
+import com.anas.jsimpletexteditor.settings.categories.AbstractSettingsCategory;
 import com.anas.jsimpletexteditor.settings.categories.ColorCategory;
 import com.anas.jsimpletexteditor.settings.categories.FontCategory;
 import net.miginfocom.swing.MigLayout;
@@ -10,8 +11,8 @@ import java.awt.*;
 public class SettingsFrame extends JFrame {
     private JList<String> categoriesList;
     private JScrollPane categoriesScrollPane;
-    private String[] categories;
     private JPanel settingsPanel;
+    private AbstractSettingsCategory currentCategory;
     private JScrollPane settingsScrollPane;
 
     private JSplitPane splitPane;
@@ -22,11 +23,16 @@ public class SettingsFrame extends JFrame {
         super("Settings");
         setUpTheFrame();
         setUpTheCategories();
+        setUpCurrentCategory();
         setUpTheSettingsPanel();
         setUpTheSplitPane();
         setUpTheButtons();
         addTheComponents();
         super.setVisible(true);
+    }
+
+    private void setUpCurrentCategory() {
+        currentCategory = FontCategory.getInstance();
     }
 
     private void setUpTheSplitPane() {
@@ -42,6 +48,30 @@ public class SettingsFrame extends JFrame {
         okButton = new JButton("OK");
         applyButton = new JButton("Apply");
         cancelButton = new JButton("Cancel");
+
+        addButtonListeners();
+    }
+
+    private void addButtonListeners() {
+        okButton.addActionListener(event -> {
+            save();
+            super.dispose();
+        });
+
+        applyButton.addActionListener(event -> save());
+
+        cancelButton.addActionListener(event -> cancel());
+    }
+
+    private void cancel() {
+        FontCategory.removeInstance();
+        ColorCategory.removeInstance();
+        super.dispose();
+    }
+
+    private void save() {
+        FontCategory.getInstance().saveSettings();
+        ColorCategory.getInstance().saveSettings();
     }
 
     private void addTheComponents() {
@@ -56,13 +86,24 @@ public class SettingsFrame extends JFrame {
         settingsPanel.setLayout(new MigLayout());
         settingsPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        settingsPanel.add(new ColorCategory(), "grow, push, wrap");
+        drawCurrentCategory();
 
         settingsScrollPane = new JScrollPane(settingsPanel);
     }
 
+    private void drawCurrentCategory() {
+        settingsPanel.add(currentCategory, "grow, push, wrap");
+    }
+
+    private void reDrawCurrentCategory() {
+        settingsPanel.removeAll();
+        drawCurrentCategory();
+        settingsPanel.revalidate();
+        settingsPanel.repaint();
+    }
+
     private void setUpTheCategories() {
-        categories = new String[3];
+        String[] categories = new String[3];
         categories[0] = new String("Font");
         categories[1] = new String("Theme");
         categories[2] = new String("Other");
@@ -74,6 +115,17 @@ public class SettingsFrame extends JFrame {
         categoriesList.setSelectedIndex(0);
 
         categoriesScrollPane = new JScrollPane(categoriesList);
+        addCategoryListeners();
+    }
+
+    private void addCategoryListeners() {
+        categoriesList.addListSelectionListener(e -> {
+            switch (categoriesList.getSelectedIndex()) {
+                case 0 -> currentCategory = FontCategory.getInstance();
+                case 1 -> currentCategory = ColorCategory.getInstance();
+            }
+            reDrawCurrentCategory();
+        });
     }
 
     private void setUpTheFrame() {
@@ -82,10 +134,4 @@ public class SettingsFrame extends JFrame {
         super.setSize(new Dimension(500, 500));
         super.setLocationRelativeTo(null); // center the frame on the screen
     }
-
-    // Test
-    public static void main(String[] args) {
-        new SettingsFrame();
-    }
-
 }

@@ -2,6 +2,7 @@ package com.anas.jsimpletexteditor;
 
 import com.anas.jsimpletexteditor.files.FileType;
 import com.anas.jsimpletexteditor.files.TextFile;
+import com.anas.jsimpletexteditor.settings.*;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
@@ -9,14 +10,13 @@ import java.awt.*;
 import java.io.Serial;
 import java.io.Serializable;
 
-public class MainFrame extends JFrame implements Serializable {
+public class MainFrame extends JFrame implements Serializable, SettingsListener {
     @Serial
     private static final long serialVersionUID = 1L;
     private TabbedPane tabbedPane;
     private InformationPanel informationPanel;
     private JMenuBar menuBar;
-    private Font uiFont;
-    private Color backgroundColor, fontColor;
+
     public MainFrame() {
         super("Simple Text Editor");
         init();
@@ -25,8 +25,10 @@ public class MainFrame extends JFrame implements Serializable {
         super.setLayout(new MigLayout());
         super.setSize(new Dimension(800, 600));
         this.addComponents(); // add components to the frame
+        this.setUpSettings((UISettings) SettingsManager.getInstance().getUiSettings());
         super.setLocationRelativeTo(null);
         super.setVisible(true);
+        SettingsManager.getInstance().addSettingsListener(this);
     }
 
     private void addMenuBar() {
@@ -54,7 +56,7 @@ public class MainFrame extends JFrame implements Serializable {
 
         addFileMenuNewFileTypeItems(newFileMenu);
 
-        fileMenu.setFont(uiFont);
+        fileMenu.setFont(SettingsManager.getInstance().getUiSettings().getFont());
         fileMenu.setMnemonic('F');
         menuBar.add(fileMenu);
 
@@ -95,6 +97,30 @@ public class MainFrame extends JFrame implements Serializable {
         fileMenuItems[3].addActionListener(event -> {
             tabbedPane.remove(tabbedPane.getCurrentTab());
         });
+
+        fileMenuItems[4].addActionListener(event -> new SettingsFrame());
+    }
+
+    @Override
+    public void onSettingsChanged(SettingsChangedEvent event) {
+        setUpSettings(event.getUiSettings());
+        super.revalidate();
+        super.repaint();
+    }
+
+    private void setUpSettings(UISettings uiSettings) {
+        super.setFont(uiSettings.getFont());
+        super.setBackground(uiSettings.getBackgroundColor());
+        super.getContentPane().setBackground(uiSettings.getBackgroundColor());
+        super.setForeground(uiSettings.getTextColor());
+
+        menuBar.setFont(uiSettings.getFont());
+        menuBar.setBackground(uiSettings.getBackgroundColor());
+        menuBar.setForeground(uiSettings.getTextColor());
+
+        this.informationPanel.setBackground(uiSettings.getBackgroundColor());
+        this.informationPanel.setForeground(uiSettings.getTextColor());
+        this.informationPanel.setFont(uiSettings.getFont());
     }
 
     private static class CustomMenuItem extends JMenuItem {
@@ -118,7 +144,7 @@ public class MainFrame extends JFrame implements Serializable {
                 textFile.setType(item.fileType);
                 tabbedPane.openNewTab(textFile);
             });
-            item.setFont(uiFont);
+            item.setFont(SettingsManager.getInstance().getUiSettings().getFont());
         }
     }
 
@@ -128,7 +154,7 @@ public class MainFrame extends JFrame implements Serializable {
     }
 
     private void init() {
-        tabbedPane = new TabbedPane(uiFont);
+        tabbedPane = new TabbedPane();
         informationPanel = new InformationPanel(tabbedPane);
     }
 }
