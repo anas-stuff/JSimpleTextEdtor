@@ -1,5 +1,6 @@
 package com.anas.jsimpletexteditor.settings;
 
+import com.anas.jsimpletexteditor.settings.categories.ColorCategory;
 import com.anas.jsimpletexteditor.settings.categories.FontCategory;
 import net.miginfocom.swing.MigLayout;
 
@@ -55,7 +56,7 @@ public class SettingsFrame extends JFrame {
         settingsPanel.setLayout(new MigLayout());
         settingsPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        settingsPanel.add(new FontCategory(), "grow, push, wrap");
+        settingsPanel.add(new ColorCategory(), "grow, push, wrap");
 
         settingsScrollPane = new JScrollPane(settingsPanel);
     }
