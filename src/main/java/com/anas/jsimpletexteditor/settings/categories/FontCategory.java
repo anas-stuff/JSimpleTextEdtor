@@ -6,50 +6,33 @@ import javax.swing.*;
 import java.awt.*;
 
 public class FontCategory extends AbstractSettingsCategory {
-    private JPanel uiFontPanel, editorFontPanel;
     private JComboBox<String> uiFamilyComboBox, editorFamilyComboBox;
     private JSpinner uiSizeSpinner, editorSizeSpinner;
     private JComboBox<String> uiStyleComboBox, editorStyleComboBox;
 
     public FontCategory() {
         super("Font");
-        addListeners();
-        setUpPanels();
-        addPanels();
     }
 
-    private void addPanels() {
-        super.add(uiFontPanel , "wrap, grow");
-        super.add(editorFontPanel, "wrap");
+    @Override
+    protected void addComponentsToPanels() {
+        super.getUiPanel().add(new JLabel("Family"));
+        super.getUiPanel().add(uiFamilyComboBox);
+        super.getUiPanel().add(new JLabel("Size"), "gap unrelated");
+        super.getUiPanel().add(uiSizeSpinner);
+        super.getUiPanel().add(new JLabel("Style"), "gap unrelated");
+        super.getUiPanel().add(uiStyleComboBox);
+
+        super.getEditorPanel().add(new JLabel("Family"));
+        super.getEditorPanel().add(editorFamilyComboBox);
+        super.getEditorPanel().add(new JLabel("Size"), "gap unrelated");
+        super.getEditorPanel().add(editorSizeSpinner);
+        super.getEditorPanel().add(new JLabel("Style"), "gap unrelated");
+        super.getEditorPanel().add(editorStyleComboBox);
     }
 
-    private void setUpPanels() {
-        uiFontPanel.setLayout(new MigLayout());
-        uiFontPanel.setBorder(BorderFactory.createTitledBorder("UI"));
-
-        editorFontPanel.setLayout(new MigLayout());
-        editorFontPanel.setBorder(BorderFactory.createTitledBorder("Editor"));
-
-        addComponentsToPanels();
-    }
-
-    private void addComponentsToPanels() {
-        uiFontPanel.add(new JLabel("Family"));
-        uiFontPanel.add(uiFamilyComboBox);
-        uiFontPanel.add(new JLabel("Size"), "gap unrelated");
-        uiFontPanel.add(uiSizeSpinner);
-        uiFontPanel.add(new JLabel("Style"), "gap unrelated");
-        uiFontPanel.add(uiStyleComboBox);
-
-        editorFontPanel.add(new JLabel("Family"));
-        editorFontPanel.add(editorFamilyComboBox);
-        editorFontPanel.add(new JLabel("Size"), "gap unrelated");
-        editorFontPanel.add(editorSizeSpinner);
-        editorFontPanel.add(new JLabel("Style"), "gap unrelated");
-        editorFontPanel.add(editorStyleComboBox);
-    }
-
-    private void addListeners() {
+    @Override
+    protected void addListeners() {
         addCompoBoxesListeners();
         addSpinnersListeners();
     }
@@ -71,7 +54,6 @@ public class FontCategory extends AbstractSettingsCategory {
     protected void init() {
         initComboBoxes();
         initSpinners();
-        initPanels();
     }
 
     @Override
@@ -83,11 +65,6 @@ public class FontCategory extends AbstractSettingsCategory {
         editorFamilyComboBox.setSelectedItem(super.editorSettings.getFont().getFamily());
         editorSizeSpinner.setValue(super.editorSettings.getFont().getSize());
         editorStyleComboBox.setSelectedItem(super.editorSettings.getFont().getStyle());
-    }
-
-    private void initPanels() {
-        uiFontPanel = new JPanel();
-        editorFontPanel = new JPanel();
     }
 
     private void initSpinners() {
