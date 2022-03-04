@@ -13,6 +13,7 @@
 <img alt="with open file" src="./Screenshots/4.png">
 <img alt="with open file and settings font" src="./Screenshots/5.png">
 <img alt="with open file and settings color" src="./Screenshots/6.png">
+<img alt="with open file and chanced settings" src="./Screenshots/7.png">
 
 
 #### License: MIT
