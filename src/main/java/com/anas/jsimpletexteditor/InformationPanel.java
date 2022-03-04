@@ -26,7 +26,7 @@ public class InformationPanel extends JPanel implements ChangeListener {
     }
 
     private void addComponents() {
-        add(charsNumberLabel, "");
+        add(charsNumberLabel, "grow, push");
         add(typeComboBox, "");
     }
 
@@ -35,12 +35,21 @@ public class InformationPanel extends JPanel implements ChangeListener {
         charsNumberLabel = new JLabel("");
         Tab tab = tabbedPane.getCurrentTab();
         textEditorAreaListener.setInformationPanel(this);
+        setupComponents(tab);
+        tabbedPane.addChangeListener(this);
+    }
+
+    private boolean setupComponents(Tab tab) {
         if (tab != null) {
             setValues(tab);
+            charsNumberLabel.setVisible(true);
+            typeComboBox.setVisible(true);
+            return true;
         } else {
-            typeComboBox.removeAllItems();
+            charsNumberLabel.setVisible(false);
+            typeComboBox.setVisible(false);
+            return false;
         }
-        tabbedPane.addChangeListener(this);
     }
 
     private void setValues(Tab tab) {
@@ -59,14 +68,9 @@ public class InformationPanel extends JPanel implements ChangeListener {
     @Override
     public void stateChanged(ChangeEvent changeEvent) {
         Tab tab = tabbedPane.getCurrentTab();
-        if (tab != null) {
-            setValues(tab);
+        if (setupComponents(tab)) {
             textEditorAreaListener.setAcceptTab(tab);
             tab.getTextEditorPane().getTextArea().addKeyListener(textEditorAreaListener);
-        } else {
-            textEditorAreaListener.setAcceptTab(null);
-            charsNumberLabel.setText("");
-            typeComboBox.removeAllItems();
         }
     }
 

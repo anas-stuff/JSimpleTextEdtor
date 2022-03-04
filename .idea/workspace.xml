@@ -7,15 +7,7 @@
     <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="Add the color settings pane">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/InformationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/InformationPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TabbedPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TabbedPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TextEditorPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/TextEditorPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/SettingsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/categories/ColorCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/categories/ColorCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/categories/FontCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/categories/FontCategory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +131,7 @@
       <workItem from="1646309605118" duration="25641000" />
       <workItem from="1646399186230" duration="193000" />
       <workItem from="1646399399134" duration="292000" />
-      <workItem from="1646399710736" duration="6807000" />
+      <workItem from="1646399710736" duration="12327000" />
     </task>
     <task id="LOCAL-00001" summary="Add some configs">
       <created>1646176042134</created>
