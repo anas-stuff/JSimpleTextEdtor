@@ -69,7 +69,7 @@ public abstract class Settings implements Serializable {
     public abstract String getSettingsFilePath();
 
     public String getBasePath() {
-        return System.getProperty("user.dir") + File.separator + ".jsimpletexteditor";
+        return System.getProperty("user.home") + File.separator + ".jsimpletexteditor";
     }
 
 }

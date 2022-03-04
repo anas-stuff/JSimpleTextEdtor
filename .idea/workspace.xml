@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="Add the color settings pane">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/InformationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/InformationPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anas/jsimpletexteditor/settings/Settings.java" afterDir="false" />
-    </list>
+    <list default="true" id="bda28cd2-ace3-48d5-96e7-3621043b34f6" name="Changes" comment="Add readme files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +127,7 @@
       <workItem from="1646309605118" duration="25641000" />
       <workItem from="1646399186230" duration="193000" />
       <workItem from="1646399399134" duration="292000" />
-      <workItem from="1646399710736" duration="12327000" />
+      <workItem from="1646399710736" duration="12806000" />
     </task>
     <task id="LOCAL-00001" summary="Add some configs">
       <created>1646176042134</created>
@@ -273,7 +269,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646352267344</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Add space">
+      <created>1646417453495</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1646417453495</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add readme files">
+      <created>1646417480996</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1646417480996</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +322,9 @@
     <MESSAGE value="Fix ignore file" />
     <MESSAGE value="Improve the code ↖️↖️" />
     <MESSAGE value="Add the color settings pane" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add the color settings pane" />
+    <MESSAGE value="Add space" />
+    <MESSAGE value="Add readme files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add readme files" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
