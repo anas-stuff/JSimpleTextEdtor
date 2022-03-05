@@ -2,6 +2,7 @@ package com.anas.jsimpletexteditor;
 
 import com.anas.jsimpletexteditor.files.FileType;
 import com.anas.jsimpletexteditor.files.TextFile;
+import com.anas.jsimpletexteditor.listners.MainFrameListener;
 import com.anas.jsimpletexteditor.settings.*;
 import net.miginfocom.swing.MigLayout;
 
@@ -21,12 +22,13 @@ public class MainFrame extends JFrame implements Serializable, SettingsListener 
         super("Simple Text Editor");
         init();
         addMenuBar();
-        super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        super.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         super.setLayout(new MigLayout());
         super.setSize(new Dimension(800, 600));
         this.addComponents(); // add components to the frame
         this.setUpSettings((UISettings) SettingsManager.getInstance().getUiSettings());
         super.setLocationRelativeTo(null);
+        super.addWindowListener(new MainFrameListener(this));
         super.setVisible(true);
         SettingsManager.getInstance().addSettingsListener(this);
     }
@@ -73,15 +75,8 @@ public class MainFrame extends JFrame implements Serializable, SettingsListener 
         });
 
         fileMenuItems[1].addActionListener(event -> {
-            String path = null;
-            if (!tabbedPane.getCurrentTab().getTextEditorPane().getTextFile().exists()) {
-                if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
-                    path = fileChooser.getSelectedFile().getPath();
-                }
-            } else {
-                path = tabbedPane.getCurrentTab().getTextEditorPane().getTextFile().getPath();
-            }
-            tabbedPane.getCurrentTab().save(path);
+            if (tabbedPane.getCurrentTab() != null)
+                tabbedPane.getCurrentTab().save();
         });
 
         fileMenuItems[2].addActionListener(event -> {
@@ -94,11 +89,22 @@ public class MainFrame extends JFrame implements Serializable, SettingsListener 
             }
         });
 
-        fileMenuItems[3].addActionListener(event -> {
-            tabbedPane.remove(tabbedPane.getCurrentTab());
-        });
+        fileMenuItems[3].addActionListener(event -> tabbedPane.remove(tabbedPane.getCurrentTab()));
 
         fileMenuItems[4].addActionListener(event -> new SettingsFrame());
+
+        fileMenuItems[5].addActionListener(event -> this.exit());
+    }
+
+    public void exit() {
+        if (tabbedPane.anyTabHasChanged()) {
+            if (JOptionPane.showConfirmDialog(this,
+                    "You have unsaved changes. Are you sure you want to exit?",
+                    "Exit", JOptionPane.YES_NO_OPTION) != JOptionPane.YES_OPTION) {
+                return;
+            }
+        }
+        System.exit(0);
     }
 
     @Override

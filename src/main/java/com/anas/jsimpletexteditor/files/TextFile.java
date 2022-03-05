@@ -5,8 +5,10 @@ import java.io.*;
 
 public class TextFile extends File {
     private FileType fileType;
+    private String path;
     public TextFile(String pathname) {
         super(pathname);
+        this.setPath(super.getPath());
         fileType = FileType.getFileType(new File(pathname));
     }
 
@@ -36,7 +38,9 @@ public class TextFile extends File {
             while ((line = bufferedReader.readLine()) != null) {
                 stringBuilder.append(line).append('\n');
             }
-            stringBuilder.deleteCharAt(stringBuilder.lastIndexOf("\n")); // Delete last new line
+            if (stringBuilder.length() > 0) {
+                stringBuilder.deleteCharAt(stringBuilder.lastIndexOf("\n")); // Delete last new line
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -53,5 +57,14 @@ public class TextFile extends File {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    @Override
+    public String getPath() {
+        return this.path;
     }
 }

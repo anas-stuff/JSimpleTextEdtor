@@ -62,4 +62,29 @@ public class Tab extends JPanel {
             return true;
         return tabHead.hasChange();
     }
+
+    public boolean exit() {
+        if (hasChange()) {
+            int result = JOptionPane.showConfirmDialog(this, "Do you want to save changes?", "Save", JOptionPane.YES_NO_CANCEL_OPTION);
+            if (result == JOptionPane.YES_OPTION) {
+                return save();
+            }
+        }
+        return true;
+    }
+
+    public boolean save() {
+        if (!textFile.exists()) {
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Save location");
+            fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+                textFile.setPath(fileChooser.getSelectedFile().getAbsolutePath());
+            } else {
+                return false;
+            }
+        }
+        save(textFile.getPath());
+        return true;
+    }
 }
