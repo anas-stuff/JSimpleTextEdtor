@@ -96,7 +96,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.JSimpleTextEdtor.jar">
+  <component name="RunManager" selected="JAR Application.JSimpleTextEdtor-1.0-SNAPSHOT.jar">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.anas.jsimpletexteditor.Main" />
       <module name="JSimpleTextEdtor" />
@@ -123,12 +123,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JSimpleTextEdtor-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/JSimpleTextEdtor-1.0-SNAPSHOT.jar" />
+      <method v="2" />
+    </configuration>
     <configuration name="JSimpleTextEdtor.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/JSimpleTextEdtor.jar" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.JSimpleTextEdtor-1.0-SNAPSHOT.jar" />
         <item itemvalue="JAR Application.JSimpleTextEdtor.jar" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.SettingsFrame" />
